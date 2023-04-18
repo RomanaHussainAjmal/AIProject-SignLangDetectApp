@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .w3-row-padding img {margin-bottom: 12px}
+            .w3-sidebar {width: 120px;background: #222;}
+            .button {background-color: #fafcfa;color: rgb(3, 3, 3); border: 2px solid #555555;padding: 15px 32px; text-align: center;text-decoration:
+                none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; width: 500px;}
+        body {
+            background-image: url("/static/images/ASL-cover-image.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        </style>
+        <!--<script>
+            function myFunction() {
+                 { url_for('video') }
+            }
+        </script>-->
+    </head>
+    <body class="w3-black">
+        <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+                <i class="fa fa-home w3-xxlarge"></i>
+                <p>HOME</p>
+            </a>
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-user w3-xxlarge"></i>
+                <p>ABOUT</p>
+            </a>
+            <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-eye w3-xxlarge"></i>
+                <p>INSTRUCTIONS</p>
+            </a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-envelope w3-xxlarge"></i>
+                <p>CONTACT</p>
+            </a>
+        </nav>
+        <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+            <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+                <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+                <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">Vision</a>
+                <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">INSTRUCTIONS</a>
+                <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+            </div>
+        </div>
+        <div class="w3-padding-large" id="main">
+            <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+                <h1 class="w3-jumbo">
+                    <span class="w3-hide-small"></span> Sign Language Recognition</h1>
+                <p>Georgian College</p>
+                
+            </header>
+            <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+                
+                <center>
+                 
+                        <button class="button" id="demo" onclick="window.location.href='{{ url_for( 'video') }}'">
+                                                Click Here for the Camera Window to capture signs
+                        </button> 
+                        <figure>
+                        <figcaption>Recognised Audio</figcaption>
+                            <audio controls>
+                                <source src="{{ url_for('PredictedTxtAudio_func', filename='PredictedTxtAudio.mp3') }}?v={{ timestamp  }}"  type="audio/mpeg">
+                            </audio>
+                        </figure>
+                </center>
+                <h2 class="w3-text-dark-grey">Vision</h2>
+                <hr style="width:200px" class="w3-opacity">
+                <ul>
+                    <li>This goal is to remove the isolation that is felt within the deaf community.</li>
+<li>Loneliness and depression exist at higher rates among the deaf population, especially when they are immersed in a hearing world.</li>
+<li>Large barriers that profoundly affect life quality stem from the communication disconnect between the deaf and the hearing. Some examples are information deprivation, limitation of social connections, and difficulty integrating into society.
+</li></ul>
+               <!-- <p>MNIST image dataset of handwritten digits is a popular benchmark for image-based machine learning methods.
+                    Dataset format is patterned to match closely with the classic MNIST.
+                    Each training and test case represents a label (0-25) as a one-to-one map for each alphabetic letter A-Z.
+                    Header row of label, pixel1,pixel2….pixel784 which represent a single 28x28 pixel image with grayscale values between 0-255. 
+                </p>-->
+                <div class="w3-row-padding" style="margin:0 -16px">
+                    <div class="w3-half">
+                        <h2 class="w3-text-dark-grey">Instructions</h2>
+                        <ul><li>Click on the above button for a new window to capture the signs </li>
+                        <li><p>press space to capture your letter signed</p></li>
+                            <li><p>press escape for closing window</p></li></ul>
+                    </div>                  
+                </div>
+                <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                    <h2 class="w3-text-dark-grey">Contact Team</h2>
+                    <hr style="width:200px" class="w3-opacity">
+                    <div class="w3-section">
+                        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Barrie, On</p>
+                        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +1(437)654-3279</p>
+                        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email:SLR@georgianCollege.com</p>
+                    </div><br>
+                </div>
+                <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+                    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                    <i class="fa fa-instagram w3-hover-opacity"></i>
+                    <i class="fa fa-snapchat w3-hover-opacity"></i>
+                    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                    <i class="fa fa-twitter w3-hover-opacity"></i>
+                    <i class="fa fa-linkedin w3-hover-opacity"></i>
+                    <p class="w3-medium">Powered by <a href="https://www.georgiancollege.ca/" target="_blank" class="w3-hover-text
+                        green">SLR.co</a></p>
+                </footer>
+            </div>
+        </div>
+    </body> 
+</html>
